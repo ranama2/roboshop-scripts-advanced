@@ -26,6 +26,7 @@ configure_and_install_nodejs(){
   dnf install nodejs -y
 }
 configure_component(){
+  rm -rf /app
   useradd roboshop
   mkdir /app
   curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip

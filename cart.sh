@@ -1,5 +1,5 @@
 source common.sh
-component=user
+component=cart
 
 print_head Install nodejs 20
 configure_and_install_nodejs &>> $log_file
@@ -7,7 +7,7 @@ configure_and_install_nodejs &>> $log_file
 print_head Configure and install component
 configure_component &>> $log_file
 
-cp user.service /etc/systemd/system/user.service
+cp cart.service /etc/systemd/system/cart.service
 
 print_head Reload daemon
 reload_daemon &>> $log_file

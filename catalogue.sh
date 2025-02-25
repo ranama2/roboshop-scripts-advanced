@@ -4,8 +4,6 @@ component=catalogue
 print_head configure and install nodejs
 configure_and_install_nodejs &>> $log_file
 
-rm -rf /app
-
 print_head configure catalogue
 configure_component &>> $log_file
 
