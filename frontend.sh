@@ -3,7 +3,7 @@ source common.sh
 
 print_head Install and start nginx
 component=nginx
-install_components
+configure_and_install_component
 enable_and_start_component
 
 print_head Configure nginx
