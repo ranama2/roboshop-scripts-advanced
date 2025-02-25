@@ -4,7 +4,7 @@ component=redis
 print_head Configure and install redis
 dnf module disable redis -y &>> $log_file
 dnf module enable redis:7 -y &>> $log_file
-dnf install redis -y
+dnf install redis -y &>> $log_file
 
 
 sed -i ‘s|127.0.0.1|0.0.0.0|’ /etc/redis/redis.conf
