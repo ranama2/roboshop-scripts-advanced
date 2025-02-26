@@ -1,5 +1,5 @@
 
-
+log_file=/tmp/dummyfile
 
 configure_and_install_component(){
   dnf module disable $component -y
