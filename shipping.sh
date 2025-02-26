@@ -3,6 +3,8 @@ component=shipping
 destination=/tmp/shipping.zip
 url=https://roboshop-artifacts.s3.amazonaws.com/shipping-v3.zip
 
+cp shipping.service /etc/systemd/system/shipping.service &>> $log_file
+
 print_head Install maven
 dnf install maven -y &>> $log_file
 
@@ -18,7 +20,7 @@ mvn clean package &>> $log_file
 mv target/shipping-1.0.jar shipping.jar &>> $log_file
 
 print_head Copy shipping.service to systemd and reloading daemon
-cp shipping.service /etc/systemd/system/shipping.service &>> $log_file
+
 systemctl daemon-reload &>> $log_file
 systemctl enable shipping &>> $log_file
 systemctl start shipping &>> $log_file
