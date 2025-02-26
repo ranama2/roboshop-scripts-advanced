@@ -1,8 +1,9 @@
 
 source common.sh
+component=nginx
+component_version=nginx:1.24
 
 print_head Install and start nginx
-component=nginx
 configure_and_install_component &>> $log_file
 enable_and_start_component &>> $log_file
 

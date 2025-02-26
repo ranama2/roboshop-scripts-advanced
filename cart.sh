@@ -1,5 +1,7 @@
 source common.sh
 component=cart
+destination=/tmp/cart.zip
+url=https://roboshop-artifacts.s3.amazonaws.com/cart-v3.zip
 
 print_head Install nodejs 20
 configure_and_install_nodejs &>> $log_file

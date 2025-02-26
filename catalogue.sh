@@ -1,5 +1,7 @@
 source common.sh
 component=catalogue
+destination=/tmp/catalogue.zip
+url=https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip
 
 print_head configure and install nodejs
 configure_and_install_nodejs &>> $log_file
@@ -18,4 +20,4 @@ enable_and_start_component &>> $log_file
 print_head Install mongo client
 cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $log_file
 dnf install mongodb-mongosh -y &>> $log_file
-mongosh --host MONGODB-SERVER-IPADDRESS </app/db/master-data.js
+mongosh --host mongodb-dev.online </app/db/master-data.js

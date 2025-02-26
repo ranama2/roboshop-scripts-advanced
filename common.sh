@@ -3,7 +3,7 @@
 
 configure_and_install_component(){
   dnf module disable $component -y
-  dnf module enable $component:$component_version -y
+  dnf module enable $component_version -y
   dnf install $component -y
 }
 install_component(){
@@ -29,7 +29,7 @@ configure_component(){
   rm -rf /app
   useradd roboshop
   mkdir /app
-  curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip
+  curl -o $destination $url
   cd /app
   unzip /tmp/catalogue.zip
   cd /app
