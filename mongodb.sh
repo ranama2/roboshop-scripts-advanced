@@ -8,7 +8,7 @@ systemctl enable mongod &>> $log_file
 systemctl start mongod &>> $log_file
 
 print_head Replace local host
-sed ‘s|127.0.0.1|0.0.0.0|’ /etc/mongod.conf
+sed 's|127.0.0.1|0.0.0.0|' /etc/mongod.conf
 
 print_head restart mongodb
 systemctl restart mongod &>> $log_file
