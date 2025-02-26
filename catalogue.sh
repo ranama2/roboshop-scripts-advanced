@@ -3,13 +3,15 @@ component=catalogue
 destination=/tmp/catalogue.zip
 url=https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip
 
+cp catalogue.service /etc/systemd/system/catalogue.service
+
 print_head configure and install nodejs
 configure_and_install_nodejs &>> $log_file
 
 print_head configure catalogue
 configure_component &>> $log_file
 
-cp catalogue.service /etc/systemd/system/catalogue.service
+
 
 print_head Reload daemon
 reload_daemon &>> $log_file
