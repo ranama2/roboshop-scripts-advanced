@@ -23,4 +23,4 @@ enable_and_start_component &>> $log_file
 print_head Install mongo client
 
 dnf install mongodb-mongosh -y &>> $log_file
-mongosh --host mongodb-dev.online </app/db/master-data.js
+mongosh --host mongodb-dev.maksuduldevsecops.online </app/db/master-data.js
